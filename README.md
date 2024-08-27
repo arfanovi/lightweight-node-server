@@ -14,9 +14,13 @@
 * Route Handling:
 
     / responds with "This is the Home Page".
+
     /about responds with "This is the About Page".
+
     /contact responds with "This is the Contact Page".
+
     /file-write creates a file named demo.txt with the content "Server file Creation " and responds accordingly based on success or error.
+    
     Any other route responds with a 404 error and "Page not found".
 
 
