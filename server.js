@@ -24,3 +24,28 @@ const handleFileWrite = (res) => {
     })
 }
 
+
+
+
+
+
+
+// Create Http Server 
+const server = http.createServer((req, res)=>{
+    const routes = {
+        '/' : handleHome,
+        '/about': handleAbout,
+        '/contact': handleContact,
+        '/fileWrite': handleFileWrite,
+    };
+    
+    const handler = routes[req.url] || ((res) => sendResponse(res, 'Page Not Found', 404));
+    handler(res)
+})
+
+
+
+// Run 
+server.listen(3001, ()=>{
+    console.log('Server is running')
+})
